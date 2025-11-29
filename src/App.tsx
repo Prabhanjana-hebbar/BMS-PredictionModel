@@ -11,6 +11,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState<BatteryPrediction | null>(null);
+  const [lastInput, setLastInput] = useState<BatteryInput | null>(null);
 
   const handleGetStarted = () => {
     setShowForm(true);
@@ -22,6 +23,7 @@ function App() {
   const handlePredict = async (input: BatteryInput) => {
     setIsLoading(true);
     setPrediction(null);
+    setLastInput(input);
 
     await new Promise(resolve => setTimeout(resolve, 1500));
 
@@ -93,7 +95,7 @@ function App() {
       {prediction && (
         <div id="results-section" className="min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <PredictionResults prediction={prediction} />
+            <PredictionResults prediction={prediction} input={lastInput || undefined} />
             <div className="text-center mt-12">
               <button
                 onClick={handleNewAnalysis}
@@ -110,10 +112,7 @@ function App() {
 
       <footer className="bg-slate-900 border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-slate-400">
-            Battery Management System by <span className="text-blue-400 font-semibold">Prabhanjana M P</span>
-          </p>
-          <p className="text-slate-500 text-sm mt-2">
+          <p className="text-slate-500 text-sm">
             Powered by Random Forest Machine Learning
           </p>
         </div>

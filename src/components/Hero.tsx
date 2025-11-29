@@ -77,9 +77,6 @@ export default function Hero({ onGetStarted }: HeroProps) {
           </div>
         </div>
 
-        <div className="mt-16 text-slate-400 text-sm animate-fade-in-delay">
-          <p>Developed by <span className="text-blue-400 font-semibold">Prabhanjana M P</span></p>
-        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">

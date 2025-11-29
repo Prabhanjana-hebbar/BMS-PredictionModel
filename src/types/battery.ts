@@ -23,3 +23,15 @@ export interface BatteryMetrics {
   timeAt415V: number;
   timeConstantCurrent: number;
 }
+
+export interface DegradationPoint {
+  cycle: number;
+  soh: number;
+  temperature?: number;
+}
+
+export interface PerformanceMetric {
+  name: string;
+  value: number;
+  unit: string;
+}
