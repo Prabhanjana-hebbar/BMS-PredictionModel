@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import PredictionForm from './components/PredictionForm';
 import PredictionResults from './components/PredictionResults';
 import About from './components/About';
+import Authors from './components/Authors';
 import { BatteryInput, BatteryPrediction } from './types/battery';
 import { predictBatteryHealth } from './utils/randomForest';
 import { Battery } from 'lucide-react';
@@ -108,13 +109,43 @@ function App() {
         </div>
       )}
 
+      <Authors />
+
       <About />
 
-      <footer className="bg-slate-900 border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-slate-500 text-sm">
-            Powered by Random Forest Machine Learning
-          </p>
+      <footer className="bg-slate-900 border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-3">Project</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Battery Management System using advanced machine learning for health prediction
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-3">Authors</h4>
+              <div className="text-xs text-slate-400 space-y-1">
+                <p>Niharika S S</p>
+                <p>Poorvika K V</p>
+                <p>Prabhanjana M P</p>
+                <p>Ranjit Hegde</p>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-3">Technology</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Built with React, TypeScript, Tailwind CSS, and Recharts. Powered by Random Forest ML algorithms.
+              </p>
+            </div>
+          </div>
+          <div className="text-center">
+            <p className="text-slate-500 text-xs mb-2">
+              Powered by Random Forest Machine Learning
+            </p>
+            <p className="text-slate-600 text-xs">
+              © 2024 Battery Management System. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
